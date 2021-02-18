@@ -13,6 +13,7 @@
     GOPATH: "{{ kvm_workdir }}/go"
     GOCACHE: "{{ kvm_workdir }}/go-build"
     HOME: "{{ kvm_workdir }}"
+    #GODEBUG: x509ignoreCN=0
   block:
     - name: Install dependencies
       become: true
@@ -89,6 +90,7 @@
     GOPATH: "{{ kvm_workdir }}/go"
     GOCACHE: "{{ kvm_workdir }}/go-build"
     HOME: "{{ kvm_workdir }}"
+    #GODEBUG: x509ignoreCN=0
   module_defaults:
     shell:
       chdir: "{{ kvm_workdir }}"
@@ -155,6 +157,7 @@
     GOPATH: "{{ kvm_workdir }}/go"
     GOCACHE: "{{ kvm_workdir }}/go-build"
     HOME: "{{ kvm_workdir }}"
+    #GODEBUG: x509ignoreCN=0
   module_defaults:
     shell:
       chdir: "{{ ocp_install_path }}/artifacts/openshift-installer-{{ ocp_release }}"
@@ -231,6 +234,7 @@
     GOPATH: "{{ kvm_workdir }}/go"
     GOCACHE: "{{ kvm_workdir }}/go-build"
     HOME: "{{ kvm_workdir }}"
+    #GODEBUG: x509ignoreCN=0
   module_defaults:
     shell:
       chdir: "{{ kvm_workdir }}"
