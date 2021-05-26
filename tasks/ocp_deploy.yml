@@ -68,6 +68,10 @@
       shell: |
         sed -i "s/local_only = true/local_only = true\n    forwarders { \n        address = \"{{ kvm_libvirt_network_gw }}\"\n        domain = \"apps.\${var.cluster_domain}\" \n    }/g" {{ kvm_workdir }}/go/src/github.com/openshift/installer/data/data/libvirt/main.tf
 
+    - name: Change Bootstrap Memory
+      shell: |
+        sed -i "s/ = 4096/ = {{ ocp_bootstrap_memory * 1024 }}/g" {{ kvm_workdir }}/go/src/github.com/openshift/installer/data/data/libvirt/variables-libvirt.tf
+
     - name: Change timeouts to 180m
       shell: |
         sed -i 's/apiTimeout := 20/apiTimeout := 180/g' {{ kvm_workdir }}/go/src/github.com/openshift/installer/cmd/openshift-install/create.go

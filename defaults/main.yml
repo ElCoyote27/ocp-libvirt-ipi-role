@@ -33,11 +33,11 @@ ocp_install_path: "{{ kvm_workdir }}/ocp"
 ocp_mirror: "https://mirror.openshift.com/pub/openshift-v4/clients/ocp"
 ocp_release: "4.7.0"
 
+ocp_bootstrap_memory: 4
+
 ocp_master_memory: 16
 ocp_master_cpu: 4
 ocp_master_disk: 120
-
-
 
 ocp_worker_memory: 8
 ocp_worker_cpu: 2
